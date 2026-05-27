@@ -2,8 +2,6 @@
 
 ## Modelo de inventario con variables binarias
 
----
-
 # 1. Definición del problema
 
 El sistema debe seleccionar rutas mensuales para cada auditor considerando:
@@ -45,14 +43,14 @@ Donde:
 
 # 3. Parámetros
 
-| Parámetro | Descripción |
-|---|---|
-| \(km_j\) | kilómetros de la ruta \(j\) |
-| \(D_i\) | días hábiles del auditor \(i\) |
-| \(K_i\) | límite mensual de kilómetros (\(Km\_con\_bono\)) |
-| \(a_j\) | antigüedad de la ruta \(j\) |
-| \(f_j\) | frecuencia anual mínima requerida |
-| \(v_j\) | cantidad de veces que la ruta ya fue visitada en el año |
+| Parámetro | Descripción                                             |
+| --------- | ------------------------------------------------------- |
+| \(km_j\)  | kilómetros de la ruta \(j\)                             |
+| \(D_i\)   | días hábiles del auditor \(i\)                          |
+| \(K_i\)   | límite mensual de kilómetros (\(Km_con_bono\))          |
+| \(a_j\)   | antigüedad de la ruta \(j\)                             |
+| \(f_j\)   | frecuencia anual mínima requerida                       |
+| \(v_j\)   | cantidad de veces que la ruta ya fue visitada en el año |
 
 ---
 
@@ -70,8 +68,8 @@ x_{ij} =
 
 Esto significa:
 
-- \(x_{ij} = 1\) → la ruta se programa este mes;
-- \(x_{ij} = 0\) → la ruta no se programa.
+- \(x\_{ij} = 1\) → la ruta se programa este mes;
+- \(x\_{ij} = 0\) → la ruta no se programa.
 
 ---
 
@@ -113,7 +111,7 @@ o bien, acumulado anual:
 
 Donde:
 
-- \(x_{ijm}\) indica si la ruta \(j\) fue realizada por el auditor \(i\) en el mes \(m\).
+- \(x\_{ijm}\) indica si la ruta \(j\) fue realizada por el auditor \(i\) en el mes \(m\).
 
 ---
 
@@ -152,12 +150,12 @@ Este comportamiento es equivalente a un problema de optimización combinatoria.
 
 El modelo es similar al problema clásico de la mochila (**Knapsack Problem**):
 
-| Problema mochila | Sistema de rutas |
-|---|---|
-| Objetos | Rutas |
-| Peso | Kilómetros |
-| Capacidad | Km disponibles |
-| Valor | Antigüedad/prioridad |
+| Problema mochila  | Sistema de rutas       |
+| ----------------- | ---------------------- |
+| Objetos           | Rutas                  |
+| Peso              | Kilómetros             |
+| Capacidad         | Km disponibles         |
+| Valor             | Antigüedad/prioridad   |
 | Selección binaria | Ruta seleccionada o no |
 
 La diferencia principal es que aquí además existen:
