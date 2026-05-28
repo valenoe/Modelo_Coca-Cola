@@ -106,7 +106,7 @@ La variable principal del modelo es **binaria**:
 
 $$x_{ijm} = \begin{cases} 1 & \text{si la ruta } j \text{ es asignada al auditor } i \text{ en el mes } m \\ 0 & \text{en otro caso} \end{cases}$$
 
-Para la planificación del mes actual $m^*$, se trabaja con la notación simplificada $x_{ij}$ entendiéndose que corresponde al mes en curso.
+Para la planificación del mes actual $m^{\ast}$, se trabaja con la notación simplificada $x_{ij}$ entendiéndose que corresponde al mes en curso.
 
 ---
 
@@ -116,7 +116,7 @@ Para la planificación del mes actual $m^*$, se trabaja con la notación simplif
 
 Cada auditor debe realizar exactamente una ruta por día hábil del mes:
 
-$$\sum_{j \in R_i} x_{ij} = D_{im^*} \quad \forall i \in A$$
+$$\sum_{j \in R_i} x_{ij} = D_{im^{\ast}} \quad \forall i \in A$$
 
 Esta restricción es de igualdad estricta: ni más ni menos rutas que los días hábiles disponibles.
 
@@ -126,9 +126,9 @@ Esta restricción es de igualdad estricta: ni más ni menos rutas que los días 
 
 La suma de kilómetros de las rutas seleccionadas no puede superar el límite mensual:
 
-$$\sum_{j \in R_i} km_j \cdot x_{ij} \leq K_{im^*} \quad \forall i \in A$$
+$$\sum_{j \in R_i} km_j \cdot x_{ij} \leq K_{im^{\ast}} \quad \forall i \in A$$
 
-Donde $K_{im^*}$ corresponde al valor `Km_con_bono` calculado según el precio de bencina del mes.
+Donde $K_{im^{\ast}}$ corresponde al valor `Km_con_bono` calculado según el precio de bencina del mes.
 
 ---
 
@@ -138,9 +138,9 @@ Cada ruta debe alcanzar al menos $f_{\min}$ visitas durante el año:
 
 $$\sum_{m=1}^{12} x_{ijm} \geq f_{\min} \quad \forall i \in A,\ \forall j \in R_i$$
 
-Equivalentemente, usando el estado acumulado al mes $m^*$:
+Equivalentemente, usando el estado acumulado al mes $m^{\ast}$:
 
-$$v_{jm^{\ast}} + \sum_{m=m^*}^{12} x_{ijm} \geq f_{\min} \quad \forall i \in A,\ \forall j \in R_i$$
+$$v_{jm^{\ast}} + \sum_{m=m^{\ast}}^{12} x_{ijm} \geq f_{\min} \quad \forall i \in A,\ \forall j \in R_i$$
 
 Esta forma permite detectar anticipadamente si una ruta no alcanzará la frecuencia mínima en los meses restantes del año.
 
@@ -168,12 +168,12 @@ Esto asegura que las rutas que llevan más tiempo sin programarse sean seleccion
 
 Para incorporar también la urgencia de cumplimiento de frecuencia mínima, se define un término de penalización:
 
-$$\max \sum_{j \in R_i} \left[ a_{jm^*} + \beta \cdot \max\left(0,\ f_{\min} - v_{jm^*} - (12 - m^* + 1)\right) \right] \cdot x_{ij}$$
+$$\max \sum_{j \in R_i} \left[ a_{jm^{\ast}} + \beta \cdot \max\left(0,\ f_{\min} - v_{jm^{\ast}} - (12 - m^{\ast} + 1)\right) \right] \cdot x_{ij}$$
 
 Donde:
 
 - $\beta > 0$ es un parámetro de peso que controla la importancia relativa de la urgencia de frecuencia frente a la antigüedad pura;
-- el término $\max(0,\ f_{\min} - v_{jm^*} - (12 - m^* + 1))$ cuantifica el déficit de visitas que no puede recuperarse con los meses restantes del año.
+- el término $\max(0,\ f_{\min} - v_{jm^{\ast}} - (12 - m^{\ast} + 1))$ cuantifica el déficit de visitas que no puede recuperarse con los meses restantes del año.
 
 Cuando $\beta = 0$, la función colapsa a la formulación base.
 
@@ -183,9 +183,9 @@ Cuando $\beta = 0$, la función colapsa a la formulación base.
 
 | Componente                   | Efecto                                                               |
 | ---------------------------- | -------------------------------------------------------------------- |
-| $a_{jm^*}$                   | Prioriza rutas con mayor tiempo sin visitar                          |
+| $a_{jm^{\ast}}$              | Prioriza rutas con mayor tiempo sin visitar                          |
 | $\beta \cdot \text{déficit}$ | Eleva la prioridad de rutas en riesgo de no cumplir frecuencia anual |
-| Restricción 5.1              | Garantiza exactamente $D_{im^*}$ rutas seleccionadas                 |
+| Restricción 5.1              | Garantiza exactamente $D_{im^{\ast}}$ rutas seleccionadas            |
 | Restricción 5.2              | Garantiza que no se supera el límite de km                           |
 | Restricción 5.3              | Garantiza cumplimiento de frecuencia mínima a largo plazo            |
 
@@ -259,9 +259,9 @@ Esto confirma una propiedad clave del sistema: **el pago total por kilómetros s
 
 ## 7.8 Paso 7 — Km reales disponibles con bono (`Km_con_bono`)
 
-Este es el límite efectivo $K_{im^*}$ que entra al modelo de optimización:
+Este es el límite efectivo $K_{im^{\ast}}$ que entra al modelo de optimización:
 
-$$K_{im^*} = G_{16,i} = \frac{M_{21}^m}{T \cdot M_{15}^m} \cdot G_{15,i}$$
+$$K_{im^{\ast}} = G_{16,i} = \frac{M_{21}^m}{T \cdot M_{15}^m} \cdot G_{15,i}$$
 
 ---
 
@@ -320,7 +320,7 @@ Ejemplo: $230.205 + 79.395 = \$309.600$
 
 El resultado es que $G_{22,i} = G_{20,i}$ siempre: **el pago por rutas del año actual es igual al del año anterior**. El bono no aumenta el gasto total; solo compensa internamente el alza de bencina para mantener el presupuesto estable.
 
-$$\text{Pago\_km}_{im^*} = G_{22,i} = \$309.600$$
+$$\text{Pago\_km}_{im^{\ast}} = G_{22,i} = \$309.600$$
 
 ---
 
@@ -328,7 +328,7 @@ $$\text{Pago\_km}_{im^*} = G_{22,i} = \$309.600$$
 
 El pago total es la suma de ambos componentes:
 
-$$\text{Pago\_total}_{im^*} = SB_i + \text{Pago\_km}_{im^*}$$
+$$\text{Pago\_total}_{im^{\ast}} = SB_i + \text{Pago\_km}_{im^{\ast}}$$
 
 Ejemplo: $700.000 + 309.600 = \$1.009.600$
 
@@ -338,7 +338,7 @@ Ejemplo: $700.000 + 309.600 = \$1.009.600$
 
 Si el auditor no trabajó todos los días hábiles, se aplica un descuento proporcional sobre el pago total:
 
-$$\text{Pago\_final}_{im^*} = \text{Pago\_total}_{im^*} \times \frac{DT_{im^*}}{D_{im^*}}$$
+$$\text{Pago\_final}_{im^{\ast}} = \text{Pago\_total}_{im^{\ast}} \times \frac{DT_{im^{\ast}}}{D_{im^{\ast}}}$$
 
 > ⚠️ **Por confirmar:** si el descuento aplica sobre el pago total (base + km) o solo sobre el sueldo base. La lógica reportada indica que es sobre el total, pero se debe validar con el equipo.
 
@@ -352,10 +352,10 @@ El sistema opera como una **cola circular por antigüedad**: las rutas nunca se 
 
 El algoritmo de selección mensual es:
 
-1. Ordenar todas las rutas $j \in R_i$ de mayor a menor antigüedad $a_{jm^*}$.
+1. Ordenar todas las rutas $j \in R_i$ de mayor a menor antigüedad $a_{jm^{\ast}}$.
 2. Recorrer la lista en ese orden e incluir la ruta si:
-   - Aún no se han seleccionado suficientes rutas para cubrir los días hábiles del mes ($D_{im^*}$).
-   - El km acumulado más $km_j$ no supera $K_{im^*}$.
+   - Aún no se han seleccionado suficientes rutas para cubrir los días hábiles del mes ($D_{im^{\ast}}$).
+   - El km acumulado más $km_j$ no supera $K_{im^{\ast}}$.
 3. Si una ruta no cabe en km, se omite sin perder su antigüedad (mantiene prioridad en meses siguientes).
 4. Si todas las rutas ya alcanzaron $f_{\min,i}$ visitas, se continúa seleccionando por antigüedad igual: no se excluyen, solo tienen menor prioridad que las que aún no han cumplido el mínimo.
 5. El único caso de alerta es cuando ninguna ruta cabe dentro del límite de km disponible (R5).
@@ -371,7 +371,7 @@ El algoritmo de selección mensual es:
 
 Resuelve el modelo de programación lineal entera mixta (MILP) completo:
 
-$$\max \sum_{j \in R_i} \left[ a_{jm^*} + \beta \cdot \delta_j \right] \cdot x_{ij}$$
+$$\max \sum_{j \in R_i} \left[ a_{jm^{\ast}} + \beta \cdot \delta_j \right] \cdot x_{ij}$$
 
 sujeto a las restricciones 5.1, 5.2, 5.3 y 5.4.
 
@@ -402,10 +402,10 @@ El modelo es una variante del _Bounded Knapsack Problem_ clásico con restriccio
 | ------------------------- | ------------------------------------------------------------- |
 | Objetos                   | Rutas $j \in R_i$                                             |
 | Peso del objeto           | Kilómetros $km_j$                                             |
-| Capacidad de la mochila   | Límite mensual $K_{im^*}$                                     |
-| Valor del objeto          | Antigüedad $a_{jm^*}$ (+ urgencia)                            |
+| Capacidad de la mochila   | Límite mensual $K_{im^{\ast}}$                                |
+| Valor del objeto          | Antigüedad $a_{jm^{\ast}}$ (+ urgencia)                       |
 | Selección binaria         | $x_{ij} \in \{0,1\}$                                          |
-| **Restricción adicional** | **Cardinalidad exacta** $\sum x_{ij} = D_{im^*}$              |
+| **Restricción adicional** | **Cardinalidad exacta** $\sum x_{ij} = D_{im^{\ast}}$         |
 | **Restricción adicional** | **Frecuencia mínima anual** $\sum_m x_{ijm} \geq f_{\min}$    |
 | **Restricción adicional** | **Estado dinámico** $a_{jm}$, $v_{jm}$ se actualizan cada mes |
 
@@ -432,11 +432,11 @@ Excel puede funcionar como **interfaz auxiliar** (ingreso de precio de bencina, 
 
 # 12. Comportamiento del sistema ante alzas sostenidas de bencina
 
-Una subida del precio $P_m$ reduce $K_{im^*}$, lo que genera:
+Una subida del precio $P_m$ reduce $K_{im^{\ast}}$, lo que genera:
 
 1. **Restricción de capacidad más estricta**: menos rutas km-pesadas pueden incluirse.
 2. **Acumulación de antigüedad**: rutas que no caben quedan pendientes y aumentan $a_{jm}$.
-3. **Riesgo de incumplimiento de frecuencia mínima**: si $K_{im^*}$ cae mucho, puede volverse imposible completar $D_{im^*}$ rutas válidas → el sistema emite alerta (R5).
+3. **Riesgo de incumplimiento de frecuencia mínima**: si $K_{im^*}$ cae mucho, puede volverse imposible completar $D_{im^{\ast}}$ rutas válidas → el sistema emite alerta (R5).
 4. **Comportamiento emergente**: el sistema tiende a seleccionar rutas cortas de forma sistemática, generando desequilibrio en la rotación de rutas largas.
 
 Este es un ejemplo de **retroalimentación negativa**: el alza de bencina reduce la capacidad, que reduce las visitas posibles, que incrementa el déficit de frecuencia, que aumenta la urgencia en la función objetivo.
