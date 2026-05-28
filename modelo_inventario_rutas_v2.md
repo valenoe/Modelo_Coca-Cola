@@ -140,7 +140,7 @@ $$\sum_{m=1}^{12} x_{ijm} \geq f_{\min} \quad \forall i \in A,\ \forall j \in R_
 
 Equivalentemente, usando el estado acumulado al mes $m^*$:
 
-$$v_{jm^*} + \sum_{m=m^*}^{12} x_{ijm} \geq f_{\min} \quad \forall i \in A,\ \forall j \in R_i$$
+$$v_{jm^{\ast}} + \sum_{m=m^*}^{12} x_{ijm} \geq f_{\min} \quad \forall i \in A,\ \forall j \in R_i$$
 
 Esta forma permite detectar anticipadamente si una ruta no alcanzará la frecuencia mínima en los meses restantes del año.
 
@@ -158,7 +158,7 @@ $$x_{ijm} \in \{0, 1\} \quad \forall i \in A,\ \forall j \in R_i,\ \forall m \in
 
 El sistema maximiza la suma ponderada de antigüedad de las rutas seleccionadas:
 
-$$\max \sum_{j \in R_i} a_{jm^*} \cdot x_{ij}$$
+$$\max \sum_{j \in R_i} a_{jm^{\ast}} \cdot x_{ij}$$
 
 Esto asegura que las rutas que llevan más tiempo sin programarse sean seleccionadas primero.
 
