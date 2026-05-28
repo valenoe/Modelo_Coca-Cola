@@ -193,156 +193,195 @@ Cuando $\beta = 0$, la función colapsa a la formulación base.
 
 # 7. Cálculo del límite de kilómetros mensual (`Km_con_bono`)
 
-El presupuesto de kilómetros parte de los kilómetros históricos del auditor en el mismo mes del año anterior, ajustado por la variación del precio de la bencina. El objetivo es mantener el mismo gasto total en combustible: si la bencina sube, el auditor recorre menos kilómetros pero recibe un bono que compensa la diferencia.
+El presupuesto de kilómetros parte del presupuesto total mensual definido para el año actual, distribuido entre auditores en proporción a lo que cada uno recorrió el mismo mes del año anterior. El objetivo es mantener el mismo gasto total anual: si la bencina sube, el auditor recorre menos kilómetros pero recibe un bono que compensa la diferencia.
 
-## 7.1 Parámetros adicionales del cálculo
+## 7.1 Parámetros del cálculo
 
-| Símbolo                 | Descripción                                                                  | Ejemplo   |
-| ----------------------- | ---------------------------------------------------------------------------- | --------- |
-| $M_{20}^m$              | Presupuesto total de todos los auditores en el mes $m$ del año anterior      | 2.162.160 |
-| $M_{14}^m$              | Km totales recorridos por todos los auditores en el mes $m$ del año anterior | 18.018    |
-| $M_{21}^m$              | Presupuesto estimado total mes $m$ año actual antes del bono                 | 1.739.611 |
-| $M_{15}^m$              | Km estimados totales mes $m$ año actual antes del bono                       | 15.444    |
-| $G_{14,i}$              | Km recorridos por el auditor $i$ en el mes $m$ del año anterior              | 2.580     |
-| $T$                     | Tarifa interna vigente por km (año actual)                                   | 140       |
-| $T_{\text{ant}}$        | Tarifa interna por km del año anterior                                       | 120       |
-| $P_{\text{actual}}^m$   | Precio de la bencina en el mes $m$ del año actual                            | 1.583     |
-| $P_{\text{anterior}}^m$ | Precio de la bencina en el mes $m$ del año anterior                          | 1.188     |
-
----
-
-## 7.2 Paso 1 — Km estimados sin bono
-
-Proporción de los km históricos del auditor $i$ respecto al total del año anterior, aplicada al nuevo presupuesto:
-
-$$G_{15,i} = \frac{M_{20}^m}{T \cdot M_{14}^m} \cdot G_{14,i}$$
+| Símbolo                 | Descripción                                                                               | Ejemplo (Enero) |
+| ----------------------- | ----------------------------------------------------------------------------------------- | --------------- |
+| $M_{20}^{m,2025}$       | Presupuesto total de todos los auditores en el mes $m$ del año anterior                   | $2.162.160      |
+| $M_{20}^{m,2026}$       | Presupuesto total de todos los auditores en el mes $m$ del año actual (dato fijo por mes) | $1.829.760      |
+| $M_{14}^{m,2025}$       | Km totales recorridos por todos los auditores en el mes $m$ del año anterior              | 18.018 km       |
+| $M_{14}^{m,2026}$       | Km totales estimados para el mes $m$ del año actual (calculado)                           | 15.248 km       |
+| $M_{15}^m$              | Km estimados totales mes $m$ año actual a tarifa $T$ (calculado)                          | 13.070 km       |
+| $M_{21}^m$              | Presupuesto total mes $m$ año actual antes del bono (calculado)                           | $1.472.172      |
+| $G_{14,i}^{2025}$       | Km recorridos por el auditor $i$ en el mes $m$ del año anterior                           | 2.183 km        |
+| $G_{14,i}^{2026}$       | Km estimados para el auditor $i$ en el mes $m$ del año actual (calculado)                 | 2.183 km        |
+| $r_i$                   | Rendimiento del vehículo del auditor $i$                                                  | 11 km/litro     |
+| $T$                     | Tarifa interna vigente por km (año actual)                                                | $140            |
+| $T_{\text{ant}}$        | Tarifa interna por km del año anterior                                                    | $120            |
+| $P_{\text{actual}}^m$   | Precio de la bencina en el mes $m$ del año actual                                         | $1.583/litro    |
+| $P_{\text{anterior}}^m$ | Precio de la bencina en el mes $m$ del año anterior                                       | $1.188/litro    |
 
 ---
 
-## 7.3 Paso 2 — Litros implícitos del auditor (rendimiento)
+## 7.2 Paso 0 — Km totales estimados año actual
+
+A partir del nuevo presupuesto mensual total $M_{20}^{m,2026}$, se estiman los km totales del mes manteniendo la misma proporción que el año anterior:
+
+$$M_{14}^{m,2026} = \frac{M_{20}^{m,2026}}{M_{20}^{m,2025}} \times M_{14}^{m,2025}$$
+
+**Ejemplo enero:** $\frac{1.829.760}{2.162.160} \times 18.018 = 15.248$ km
+
+---
+
+## 7.3 Paso 1 — Km estimados por auditor año actual
+
+Se distribuyen los km totales 2026 entre auditores en proporción a lo que cada uno recorrió el año anterior:
+
+$$G_{14,i}^{2026} = \frac{G_{14,i}^{2025}}{M_{14}^{m,2025}} \times M_{14}^{m,2026}$$
+
+**Ejemplo enero Carlos:** $\frac{2.580}{18.018} \times 15.248 = 2.183$ km
+
+---
+
+## 7.4 Paso 2 — Km estimados sin bono (a tarifa $T$)
+
+$$G_{15,i} = \frac{M_{20}^{m,2026}}{T \cdot M_{14}^{m,2026}} \times G_{14,i}^{2026}$$
+
+**Ejemplo enero Carlos:** $\frac{1.829.760}{140 \times 15.248} \times 2.183 = 1.871$ km
+
+---
+
+## 7.5 Paso 3 — Litros implícitos del auditor
 
 Cantidad de litros que representan los km estimados según el rendimiento $r_i$ del vehículo:
 
 $$G_{18,i} = \frac{G_{15,i}}{r_i}$$
 
+**Ejemplo enero Carlos:** $\frac{1.871}{11} = 170$ litros
+
 ---
 
-## 7.4 Paso 3 — Bono de estabilización
+## 7.6 Paso 4 — Bono de estabilización
 
 Compensación por el alza del precio de la bencina respecto al año anterior:
 
 $$G_{19,i} = G_{18,i} \times \left( P_{\text{actual}}^m - P_{\text{anterior}}^m \right)$$
 
-El bono cubre exactamente el costo adicional de combustible generado por la diferencia de precio, calculado sobre los litros que consume el auditor.
+**Ejemplo enero Carlos:** $170 \times (1.583 - 1.188) = \$67.202$
 
 ---
 
-## 7.5 Paso 4 — Pago del año anterior
+## 7.7 Paso 5 — Pago del año actual base
 
-$$G_{20,i} = G_{14,i} \times T_{\text{ant}}$$
+$$G_{20,i} = G_{14,i}^{2026} \times T_{\text{ant}}$$
+
+**Ejemplo enero Carlos:** $2.183 \times 120 = \$262.004$
 
 ---
 
-## 7.6 Paso 5 — Pago año actual antes del bono
+## 7.8 Paso 6 — Pago año actual antes del bono
 
 $$G_{21,i} = G_{20,i} - G_{19,i}$$
 
+**Ejemplo enero Carlos:** $262.004 - 67.202 = \$194.801$
+
+_Los valores $G_{21,i}$ de todos los auditores se suman para obtener $M_{21}^m$, y los $G_{15,i}$ para obtener $M_{15}^m$._
+
 ---
 
-## 7.7 Paso 6 — Pago total año actual (con bono)
+## 7.9 Paso 7 — Pago total año actual (con bono)
 
 $$G_{22,i} = G_{21,i} + G_{19,i} = G_{20,i}$$
 
-Esto confirma una propiedad clave del sistema: **el pago total por kilómetros se mantiene igual al año anterior**, independientemente del precio de la bencina. El bono no aumenta el gasto; solo redistribuye el presupuesto para absorber el alza.
+**Ejemplo enero Carlos:** $194.801 + 67.202 = \$262.004$
+
+Propiedad clave del sistema: **el pago total por kilómetros se mantiene igual al año actual base**, independientemente del precio de la bencina. El bono no aumenta el gasto; solo redistribuye el presupuesto para absorber el alza.
 
 ---
 
-## 7.8 Paso 7 — Km reales disponibles con bono (`Km_con_bono`)
+## 7.10 Paso 8 — Km reales disponibles con bono (`Km_con_bono`)
 
 Este es el límite efectivo $K_{im^{\ast}}$ que entra al modelo de optimización:
 
-$$K_{im^{\ast}} = G_{16,i} = \frac{M_{21}^m}{T \cdot M_{15}^m} \cdot G_{15,i}$$
+$$K_{im^{\ast}} = G_{16,i} = \frac{M_{21}^m}{T \cdot M_{15}^m} \times G_{15,i}$$
+
+**Ejemplo enero Carlos:** $\frac{1.472.172}{140 \times 13.070} \times 1.871 = 1.506$ km
 
 ---
 
-## 7.9 Paso 8 — Diferencia de km (registro histórico)
+## 7.11 Paso 9 — Diferencia de km (registro histórico)
 
-$$G_{17,i} = G_{14,i} - G_{16,i}$$
+$$G_{17,i} = G_{14,i}^{2026} - G_{16,i}$$
+
+**Ejemplo enero Carlos:** $2.183 - 1.506 = 678$ km
 
 Este valor no afecta la optimización; se registra para seguimiento de la reducción de cobertura causada por el alza de bencina.
 
 ---
 
-## 7.10 Ejemplo numérico (auditor A1, mes $m$)
+## 7.12 Ejemplo numérico completo — Enero 2026 (todos los auditores)
 
-| Paso                  | Fórmula                                                             | Resultado    |
-| --------------------- | ------------------------------------------------------------------- | ------------ |
-| Km estimados sin bono | $G_{15} = \frac{2{,}162{,}160}{140 \times 18{,}018} \times 2{,}580$ | 2.211 km     |
-| Litros implícitos     | $G_{18} = \frac{2{,}211}{11}$                                       | 201 litros   |
-| Bono                  | $G_{19} = 201 \times (1{,}583 - 1{,}188)$                           | \$79.395     |
-| Pago año anterior     | $G_{20} = 2{,}580 \times 120$                                       | \$309.600    |
-| Pago sin bono         | $G_{21} = 309{,}600 - 79{,}395$                                     | \$230.205    |
-| Pago con bono         | $G_{22} = 230{,}205 + 79{,}395$                                     | \$309.600    |
-| **Km con bono**       | $G_{16} = \frac{1{,}739{,}611}{140 \times 15{,}444} \times 2{,}211$ | **1.778 km** |
-| Diferencia de km      | $G_{17} = 2{,}580 - 1{,}778$                                        | 802 km       |
+| Paso                           | Carlos    | Samuel    | Cristian  | Pablo     | Mauricio  |
+| ------------------------------ | --------- | --------- | --------- | --------- | --------- |
+| $G_{14}^{2026}$ (km est. 2026) | 2.183     | 2.678     | 3.071     | 1.907     | 3.157     |
+| $G_{15}$ (valor 140)           | 1.871     | 2.295     | 2.632     | 1.635     | 2.706     |
+| $G_{18}$ (litros)              | 170       | 135       | 155       | 136       | 180       |
+| $G_{19}$ (bono)                | $67.202   | $53.327   | $61.164   | $53.818   | $71.267   |
+| $G_{20}$ (pago base)           | $262.004  | $321.310  | $368.531  | $228.898  | $378.890  |
+| $G_{21}$ (sin bono)            | $194.801  | $267.983  | $307.368  | $175.080  | $307.622  |
+| $G_{22}$ (con bono)            | $262.004  | $321.310  | $368.531  | $228.898  | $378.890  |
+| $K_{im^*}$ (**Km_con_bono**)   | **1.506** | **1.847** | **2.118** | **1.315** | **2.177** |
+| $G_{17}$ (diferencia km)       | 678       | 831       | 953       | 592       | 980       |
+
+**Totales globales enero 2026:**
+
+- $M_{20}^{m,2026} = \$1.829.760$ (dato fijo de entrada)
+- $M_{14}^{m,2026} = 15.248$ km
+- $M_{15}^m = 13.070$ km
+- $M_{21}^m = \$1.472.172$
+- Bono total = $\$357.588$
+- Km_con_bono total = **10.516 km**
+
+> **Nota:** No se incluye Marco Contreras porque no está disponible, pero en los calculos internos si está presente.
 
 ---
 
 # 8. Cálculo del pago mensual por auditor
 
-## 8.1 Componente 1: Sueldo base
-
-El auditor recibe un sueldo base mensual fijo $SB_i$, independiente de los kilómetros recorridos. Ejemplo: \$700.000.
+El sistema calcula y entrega dos valores por auditor: el **pago por kilómetros (rutas)** y el **bono de estabilización**. El sueldo base y otros componentes son calculados externamente por el equipo administrativo.
 
 ---
 
-## 8.2 Componente 2: Pago por kilómetros (rutas)
+## 8.1 Pago por kilómetros (rutas)
 
-El pago por rutas se construye en tres pasos:
+El pago por rutas resulta directamente del cálculo de la sección 7 y corresponde a $G_{22,i}$:
 
-**Paso 1 — Calcular el pago que se hizo el año anterior:**
+$$\text{Pago-km}_{im^{\ast}} = G_{22,i} = G_{20,i}$$
 
-$$G_{20,i} = G_{14,i} \times T_{\text{ant}}$$
+Esta igualdad es una propiedad garantizada del sistema: **el pago por rutas del año actual es siempre igual al pago base calculado sobre los km estimados 2026**, independientemente del precio de la bencina. El bono no aumenta el gasto; solo redistribuye el presupuesto internamente para absorber el alza.
 
-Ejemplo: $2.580 \times 120 = \$309.600$
+**Ejemplo enero 2026 — Carlos Acevedo:**
 
-**Paso 2 — Restar el bono** (que cubre el alza de bencina):
-
-$$G_{21,i} = G_{20,i} - G_{19,i}$$
-
-Ejemplo: $309.600 - 79.395 = \$230.205$
-
-**Paso 3 — Sumar el bono de vuelta** para llegar al pago final:
-
-$$G_{22,i} = G_{21,i} + G_{19,i}$$
-
-Ejemplo: $230.205 + 79.395 = \$309.600$
-
-El resultado es que $G_{22,i} = G_{20,i}$ siempre: **el pago por rutas del año actual es igual al del año anterior**. El bono no aumenta el gasto total; solo compensa internamente el alza de bencina para mantener el presupuesto estable.
-
-$$
-\text{Pago-km}_{im^{\ast}} = G_{22,i} = \$309.600
-$$
+$$\text{Pago-km} = G_{22} = \$262.004$$
 
 ---
 
-## 8.3 Pago total mensual
+## 8.2 Bono de estabilización
 
-El pago total es la suma de ambos componentes:
+El bono corresponde a $G_{19,i}$, calculado en el Paso 4 de la sección 7. Se reporta por separado como componente informativo del pago:
 
-$$\text{Pago-total}_{im^{\ast}} = SB_i + \text{Pago-km}_{im^{\ast}}$$
+$$\text{Bono}_{im^{\ast}} = G_{19,i} = G_{18,i} \times \left( P_{\text{actual}}^m - P_{\text{anterior}}^m \right)$$
 
-Ejemplo: $700.000 + 309.600 = \$1.009.600$
+**Ejemplo enero 2026 — Carlos Acevedo:**
+
+$$\text{Bono} = 170 \times (1.583 - 1.188) = \$67.202$$
 
 ---
 
-## 8.4 Descuento por inasistencia
+## 8.3 Resumen del informe mensual por auditor
 
-Si el auditor no trabajó todos los días hábiles, se aplica un descuento proporcional sobre el pago total:
+El sistema entrega por cada auditor $i$ en el mes $m$:
 
-$$\text{Pago-final}_{im^{\ast}} = \text{Pago-total}_{im^{\ast}} \times \frac{DT_{im^{\ast}}}{D_{im^{\ast}}}$$
-
-> ⚠️ **Por confirmar:** si el descuento aplica sobre el pago total (base + km) o solo sobre el sueldo base. La lógica reportada indica que es sobre el total, pero se debe validar con el equipo.
+| Concepto                      | Símbolo           | Ejemplo (Carlos, Enero 2026) |
+| ----------------------------- | ----------------- | ---------------------------- |
+| Km estimados 2026             | $G_{14,i}^{2026}$ | 2.183 km                     |
+| Km con bono (límite efectivo) | $K_{im^{\ast}}$   | 1.506 km                     |
+| Diferencia de km              | $G_{17,i}$        | 678 km                       |
+| Bono de estabilización        | $G_{19,i}$        | $67.202                      |
+| Pago por rutas                | $G_{22,i}$        | $262.004                     |
+| Rutas asignadas del mes       | Lista de rutas    | Según algoritmo sección 9    |
 
 ---
 
