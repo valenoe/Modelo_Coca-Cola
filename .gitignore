@@ -1,0 +1,16 @@
+# Entorno virtual
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Base de datos (se sincroniza por Google Drive, no por Git)
+*.db
+
+# Archivos temporales
+*.log
+.DS_Store
+Thumbs.db
