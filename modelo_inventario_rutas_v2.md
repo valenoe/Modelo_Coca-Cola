@@ -489,35 +489,7 @@ La entidad `Programacion_mensual` es el núcleo del inventario: registra el esta
 
 ---
 
-# 15. Tecnologías recomendadas
-
-## Backend
-
-- Python (recomendado por ecosistema de optimización)
-- FastAPI o Django
-
-## Base de datos
-
-- PostgreSQL (preferido por integridad referencial y consultas complejas)
-- MySQL (alternativa)
-
-## Motor de optimización
-
-| Opción                  | Tipo               | Licencia    |
-| ----------------------- | ------------------ | ----------- |
-| OR-Tools (Google)       | Solver exacto MILP | Open source |
-| PuLP + CBC              | Solver exacto MILP | Open source |
-| Algoritmo greedy propio | Heurística         | N/A         |
-
-## Interfaz de usuario
-
-- Aplicación web con formularios simples (no requiere conocimientos técnicos)
-- Exportación de informes en Excel/PDF
-- Panel de resumen mensual
-
----
-
-# 16. Conclusión
+# 15. Conclusión
 
 El problema corresponde a un **sistema dinámico adaptativo** con las siguientes características formales:
 
