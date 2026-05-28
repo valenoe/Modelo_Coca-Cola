@@ -166,7 +166,7 @@ Esto asegura que las rutas que llevan más tiempo sin programarse sean seleccion
 
 ## 6.2 Formulación extendida (antigüedad + urgencia de frecuencia)
 
-Para incorporar también la urgencia de cumplimiento de frecuencia mínima, se define un término de penalización:
+Para incorporar también la urgencia de cumplimiento de frecuencia mínima, se define un término de incentivo por urgencia (o prioridad):
 
 $$\max \sum_{j \in R_i} \left[ a_{jm^{\ast}} + \beta \cdot \max\left(0,\ f_{\min} - v_{jm^{\ast}} - (12 - m^{\ast} + 1)\right) \right] \cdot x_{ij}$$
 
@@ -320,7 +320,9 @@ Ejemplo: $230.205 + 79.395 = \$309.600$
 
 El resultado es que $G_{22,i} = G_{20,i}$ siempre: **el pago por rutas del año actual es igual al del año anterior**. El bono no aumenta el gasto total; solo compensa internamente el alza de bencina para mantener el presupuesto estable.
 
-$$\text{Pago\_km}_{im^{\ast}} = G_{22,i} = \$309.600$$
+$$
+\text{Pago\_km}_{im^{\ast}} = G_{22,i} = \$309.600
+$$
 
 ---
 
