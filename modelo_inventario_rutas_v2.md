@@ -321,7 +321,7 @@ Ejemplo: $230.205 + 79.395 = \$309.600$
 El resultado es que $G_{22,i} = G_{20,i}$ siempre: **el pago por rutas del año actual es igual al del año anterior**. El bono no aumenta el gasto total; solo compensa internamente el alza de bencina para mantener el presupuesto estable.
 
 $$
-\mathrm{Pago\_km}_{im^{\ast}} = G_{22,i} = \$309.600
+\text{Pago-km}_{im^{\ast}} = G_{22,i} = \$309.600
 $$
 
 ---
@@ -330,7 +330,7 @@ $$
 
 El pago total es la suma de ambos componentes:
 
-$$\text{Pago\_total}_{im^{\ast}} = SB_i + \text{Pago\_km}_{im^{\ast}}$$
+$$\text{Pago-total}_{im^{\ast}} = SB_i + \text{Pago-km}_{im^{\ast}}$$
 
 Ejemplo: $700.000 + 309.600 = \$1.009.600$
 
@@ -340,7 +340,7 @@ Ejemplo: $700.000 + 309.600 = \$1.009.600$
 
 Si el auditor no trabajó todos los días hábiles, se aplica un descuento proporcional sobre el pago total:
 
-$$\text{Pago\_final}_{im^{\ast}} = \text{Pago\_total}_{im^{\ast}} \times \frac{DT_{im^{\ast}}}{D_{im^{\ast}}}$$
+$$\text{Pago-final}_{im^{\ast}} = \text{Pago-total}_{im^{\ast}} \times \frac{DT_{im^{\ast}}}{D_{im^{\ast}}}$$
 
 > ⚠️ **Por confirmar:** si el descuento aplica sobre el pago total (base + km) o solo sobre el sueldo base. La lógica reportada indica que es sobre el total, pero se debe validar con el equipo.
 
