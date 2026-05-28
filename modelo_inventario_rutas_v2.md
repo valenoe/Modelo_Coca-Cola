@@ -1,4 +1,6 @@
-# Sistema de Inventario de Rutas para Auditores
+# Informe Número 2:
+
+# Sistema de Rutas para Auditores
 
 ## Modelo de optimización combinatoria con variables binarias
 
@@ -277,7 +279,7 @@ $$G_{21,i} = G_{20,i} - G_{19,i}$$
 
 **Ejemplo enero Carlos:** $262.004 - 67.202 = \$194.801$
 
-_Los valores $G_{21,i}$ de todos los auditores se suman para obtener $M_{21}^m$, y los $G_{15,i}$ para obtener $M_{15}^m$._
+_Los valores $G_{21,i}$ de todos los auditores se suman para obtener $M_{21}^m$, y los $G_{15,i}$ para obtener $M_{15}^m$.\_
 
 ---
 
