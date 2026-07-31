@@ -1,0 +1,152 @@
+===========================================================================
+  Planificacion Junio-Septiembre 2026 | Bencina: $1,496/litro
+  Saldo inicial = 0 | Saldo final = 0
+===========================================================================
+
+---------------------------------------------------------------------------
+  Carlos Acevedo
+---------------------------------------------------------------------------
+
+  Agosto -- 21 dias | Km bono: 1,608 | Km rutas: 1,550 | Saldo: -158
+    Faustino Gonzalez                           50 km
+    Los Conquistadores                          50 km
+    Universidad de Talca                        55 km
+    Avenida Lircay                              55 km
+    Nueva Holanda                               60 km
+    Mall Plaza Talca                            60 km
+    Mercado Central                             60 km
+    Cooperativa Lircay                          60 km
+    San Miguel del Piduco                       60 km
+    Las Colines                                 65 km
+    Villa Francia                               65 km
+    Talca Centro                                65 km
+    Abate Molina                                65 km
+    Abate Molina Sur                            65 km
+    Barrio Norte                                65 km
+    Santa Ana Crea                              65 km
+    Supermercados Talca                         65 km
+    San Clemente                                85 km
+    Chile Nuevo                                 85 km
+    Duao Quiñipeumo                            130 km
+    Longavi Centro                             220 km
+
+---------------------------------------------------------------------------
+  Samuel Inostroza
+---------------------------------------------------------------------------
+
+  Agosto -- 21 dias | Km bono: 2,534 | Km rutas: 2,425 | Saldo: -1,049
+    Centro Plaza                                47 km
+    Centro Norte                                47 km
+    Feria - Mall - Terminal                     47 km
+    El Boldo                                    59 km
+    Aguas Negras                                59 km
+    Guaiquillo - Aguas Negras                   63 km
+    Hospital - Alameda - Mataquito              68 km
+    Santa Fe                                    69 km
+    Santa Lucia - Santos Martínez               69 km
+    Bombero Garrido - Vaticano                  78 km
+    Sarmiento - Rauquen                         78 km
+    Teno - Arboleda                             94 km
+    Carretera Rauquen - Avda. España           108 km
+    Lontue - Pichingal - Casa Blanca           108 km
+    Los Niches                                 142 km
+    Villa Prat - Sagrada Familia               148 km
+    La Montaña - Teno - Viluco                 149 km
+    Hualañe                                    184 km
+    Licantén                                   249 km
+    Lora - Curepto                             272 km
+    Curepto                                    287 km
+
+---------------------------------------------------------------------------
+  Cristian Lizama
+---------------------------------------------------------------------------
+
+  Agosto -- 21 dias | Km bono: 2,246 | Km rutas: 2,237 | Saldo: -224
+    SAN FDO. - INDEPENDENCIA                    33 km
+    SAN FDO. - NOR PONIENTE                     33 km
+    ANGOSTURA -  18 DE SEPTIEMBRE               51 km
+    ROMA - MIRAFLORES -POLONIA                  54 km
+    CHIMBARONGO NORTE                           61 km
+    CHIMBARONGO NORTE -CENTRO                   61 km
+    VILLA ALEGRE - LA TUNA                      62 km
+    PLACILLA                                    67 km
+    CHIMBARONGO SUR                             68 km
+    NANCAGUA -CENTRO                            75 km
+    CALLEJONES - NANCAGUA                       82 km
+    CODEGUA - PEOR ES NADA                     108 km
+    APALTA - PANIAHUE                          112 km
+    CHEPICA                                    118 km
+    CHEPICA - QUINAHUE                         121 km
+    CUNACO- CRUCE                              125 km
+    CHEPICA - LAS ALAMEDAS                     129 km
+    AUQUINCO - PUJILLAY                        137 km
+    EL HHUIQUE - PERALILLO                     178 km
+    PICHILEMU -ALCONES                         280 km
+    PICHILEMU - CENTRO                         282 km
+
+---------------------------------------------------------------------------
+  Pablo Villarroel
+---------------------------------------------------------------------------
+
+  Agosto -- 21 dias | Km bono: 1,482 | Km rutas: 1,535 | Saldo: -1,474
+    Av. Lircay                                  50 km
+    La Americas                                 50 km
+    Terminal                                    52 km
+    Villa la Paz                                55 km
+    Cancha Rayada                               55 km
+    Don Sebastian                               60 km
+    Don Arturo                                  60 km
+    Aurora de Chile                             60 km
+    Villa Perú                                  60 km
+    Brilla el Sol                               62 km
+    Daniel Rebolledo                            62 km
+    Santa Marta                                 62 km
+    Manso de Velasco                            62 km
+    Centro Talca                                65 km
+    Oriente Talca                               65 km
+    La Florida                                  70 km
+    Galilea                                     70 km
+    Rembrand                                    75 km
+    Linares: Villa Alegre                      130 km
+    Linares: Centro Brasil                     150 km
+    Linares: Centro Sur Linares                160 km
+
+---------------------------------------------------------------------------
+  Mauricio Picart
+---------------------------------------------------------------------------
+
+  Agosto -- 21 dias | Km bono: 834 | Km rutas: 2,856 | Saldo: -2,245
+    B. Oriente - Hospital                       58 km
+    Parque Industrial                           58 km
+    Alameda Sur                                 60 km
+    Centro Norte                                60 km
+    Santa Teresita Colin                        75 km
+    Culenar                                     75 km
+    Las Rastras                                 80 km
+    Camino San Clemente                         80 km
+    San Javier - La Palma                       90 km
+    San Javier Centro                           90 km
+    Colin                                       95 km
+    Estación - San Javier                       95 km
+    Lo Mares - Los Batros                      160 km
+    San Rafael                                 175 km
+    Camarico                                   175 km
+    San Maximo                                 180 km
+    El Colorado                                180 km
+    San Juan - Santa Elena                     260 km
+    Semillero - Maitencillo                    260 km
+    Longavi - Los Cristales                    275 km
+    Longavi - La Sexta                         275 km
+
+
+===========================================================================
+  RESUMEN DE SALDOS
+===========================================================================
+  Auditor                     Junio      Julio     Agosto        Sept.
+  ---------------------------------------------------------------------------
+  Carlos Acevedo               -158          -          -            -
+  Samuel Inostroza           -1,049          -          -            -
+  Cristian Lizama              -224          -          -            -
+  Pablo Villarroel           -1,474          -          -            -
+  Mauricio Picart            -2,245          -          -            -
+===========================================================================

@@ -1,0 +1,31 @@
+===========================================================================
+  Planificacion Julio 2026 - Samuel (rutas mas cortas)
+===========================================================================
+
+---------------------------------------------------------------------------
+  Samuel Inostroza
+---------------------------------------------------------------------------
+
+  Julio -- 22 dias | Km bono: 1,235 | Km rutas: 1,896 | Saldo: -773
+    Centro Norte                                47 km
+    Centro Plaza                                47 km
+    Feria - Mall - Terminal                     47 km
+    Aguas Negras                                59 km
+    El Boldo                                    59 km
+    Guaiquillo - Aguas Negras                   63 km
+    Hospital - Alameda - Mataquito              68 km
+    Santa Fe                                    69 km
+    Santa Lucia - Santos Martínez               69 km
+    Bombero Garrido - Vaticano                  78 km
+    Sarmiento - Rauquen                         78 km
+    Teno - Arboleda                             94 km
+    Bombero Garrido - Tutuquen                  98 km
+    Lontue - Sagrada Familia                    98 km
+    Sol de Septiembre - Manuel Rodríguez        98 km
+    Itahue Molina Estación                     102 km
+    Carretera Rauquen - Avda. España           108 km
+    Lontue - Pichingal - Casa Blanca           108 km
+    Molina Centro Porvenir                     111 km
+    Romeral - Los Guaicos                      111 km
+    Los Niches                                 142 km
+    Rauco - Comalle                            142 km

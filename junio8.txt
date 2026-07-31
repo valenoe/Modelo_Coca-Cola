@@ -1,0 +1,157 @@
+﻿===========================================================================
+  Planificacion Junio-Septiembre 2026 | Bencina: $1,583/litro
+  Saldo inicial = 0 | Saldo final = 0
+===========================================================================
+
+---------------------------------------------------------------------------
+  Carlos Acevedo
+---------------------------------------------------------------------------
+
+  Junio -- 22 dias | Km bono: 1,446 | Km rutas: 1,589 | Saldo: -143
+    Faustino Gonzalez                           50 km
+    Los Conquistadores                          50 km
+    Universidad de Talca                        55 km
+    Avenida Lircay                              55 km
+    Nueva Holanda                               60 km
+    Mall Plaza Talca                            60 km
+    Cooperativa Lircay                          60 km
+    San Miguel del Piduco                       60 km
+    Las Colines                                 65 km
+    Villa Francia                               65 km
+    Talca Centro                                65 km
+    Centro Oriente                              65 km
+    Abate Molina                                65 km
+    Abate Molina Sur                            65 km
+    Barrio Norte                                65 km
+    Santa Ana Crea                              65 km
+    Supermercados Talca                         65 km
+    San Clemente                                85 km
+    Chile Nuevo                                 85 km
+    Cancha Carreras                             89 km
+    Orilla de Maule                            130 km
+    Luis Cruz Martinez                         165 km
+
+---------------------------------------------------------------------------
+  Samuel Inostroza
+---------------------------------------------------------------------------
+
+  Junio -- 22 dias | Km bono: 2,209 | Km rutas: 2,429 | Saldo: -220
+    Centro Plaza                                47 km
+    Centro Norte                                47 km
+    Feria - Mall - Terminal                     47 km
+    El Boldo                                    59 km
+    Aguas Negras                                59 km
+    Guaiquillo - Aguas Negras                   63 km
+    Hospital - Alameda - Mataquito              68 km
+    Santa Fe                                    69 km
+    Santa Lucia - Santos Mart├¡nez               69 km
+    Sarmiento - Rauquen                         78 km
+    Teno - Arboleda                             94 km
+    Lontue - Sagrada Familia                    98 km
+    Sol de Septiembre - Manuel Rodr├¡guez        98 km
+    Bombero Garrido - Tutuquen                  98 km
+    Itahue Molina Estaci├│n                     102 km
+    Carretera Rauquen - Avda. Espa├▒a           108 km
+    Lontue - Pichingal - Casa Blanca           108 km
+    Villa Prat - Sagrada Familia               148 km
+    La Monta├▒a - Teno - Viluco                 149 km
+    Licant├®n                                   249 km
+    Iloca - Duao - Lipimavida                  284 km
+    Curepto                                    287 km
+
+---------------------------------------------------------------------------
+  Cristian Lizama
+---------------------------------------------------------------------------
+
+  Junio -- 22 dias | Km bono: 1,990 | Km rutas: 2,188 | Saldo: -198
+    SAN FDO. - CENTRO                           25 km
+    SAN FDO. CENTRO 2                           25 km
+    SAN FDO. - MANSO DE VELASCO                 25 km
+    SAN FDO. TERMINAL                           25 km
+    SAN FDO. - INDEPENDENCIA                    33 km
+    SAN FDO. - NOR PONIENTE                     33 km
+    SAN FDO. - ORIENTE                          34 km
+    SAN FDO. - CENTINELA                        35 km
+    VILLA ALEGRE - LA TUNA                      62 km
+    CHIMBARONGO  CENTRO                         65 km
+    CHIMBARONGO CENTRO PTE.                     65 km
+    PLACILLA                                    67 km
+    NANCAGUA -CENTRO                            75 km
+    NANCAGUA - SAN GREGORIO                     75 km
+    ROMERAL - SAN JUAN - TINGURIRICA            92 km
+    APALTA - PANIAHUE                          112 km
+    PERALILLO                                  150 km
+    LOLOL - LA LAJUELA                         188 km
+    MARCGIHUE                                  190 km
+    PAREDONES - LOLOL                          244 km
+    PICHILEMU - CENTRO                         282 km
+    PICHILEMU - ORIENTE                        286 km
+
+---------------------------------------------------------------------------
+  Pablo Villarroel
+---------------------------------------------------------------------------
+
+  Junio -- 22 dias | Km bono: 1,400 | Km rutas: 1,540 | Saldo: -140
+    Av. Lircay                                  50 km
+    La Americas                                 50 km
+    Terminal                                    52 km
+    Padre Hurtado                               55 km
+    Don Gonzalo                                 55 km
+    Villa la Paz                                55 km
+    Cancha Rayada                               55 km
+    Don Sebastian                               60 km
+    Don Arturo                                  60 km
+    Aurora de Chile                             60 km
+    Villa Per├║                                  60 km
+    Brilla el Sol                               62 km
+    Daniel Rebolledo                            62 km
+    Santa Marta                                 62 km
+    Manso de Velasco                            62 km
+    Centro Talca                                65 km
+    Oriente Talca                               65 km
+    La Florida                                  70 km
+    Galilea                                     70 km
+    Linares: Villa Alegre                      130 km
+    Linares: Villa Alegre Centro               130 km
+    Linares: Centro Brasil                     150 km
+
+---------------------------------------------------------------------------
+  Mauricio Picart
+---------------------------------------------------------------------------
+
+  Junio -- 22 dias | Km bono: 1,465 | Km rutas: 1,611 | Saldo: -146
+    B. Oriente - Hospital                       58 km
+    Parque Industrial                           58 km
+    Alameda Sur                                 60 km
+    Centro Norte                                60 km
+    Galilea - Do├▒a Ignacia                      65 km
+    Do├▒a Ignacia - Villa Ecuador                65 km
+    San Luis                                    65 km
+    J. Flor del Este                            65 km
+    Carlos Trupp                                65 km
+    Do├▒a Consuelo                               65 km
+    Jardin del Valle                            70 km
+    Magisterio                                  70 km
+    Centro Poniente                             70 km
+    Santa Teresita Colin                        75 km
+    Culenar                                     75 km
+    Las Rastras                                 80 km
+    Camino San Clemente                         80 km
+    San Javier - La Palma                       90 km
+    San Javier Centro                           90 km
+    Maule                                       95 km
+    Orilla de Maule                             95 km
+    Estaci├│n - San Javier                       95 km
+
+
+===========================================================================
+  RESUMEN DE SALDOS
+===========================================================================
+  Auditor                     Junio      Julio     Agosto        Sept.
+  ---------------------------------------------------------------------------
+  Carlos Acevedo               -143          -          -            -
+  Samuel Inostroza             -220          -          -            -
+  Cristian Lizama              -198          -          -            -
+  Pablo Villarroel             -140          -          -            -
+  Mauricio Picart              -146          -          -            -
+===========================================================================

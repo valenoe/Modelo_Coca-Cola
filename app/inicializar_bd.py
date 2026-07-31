@@ -19,7 +19,7 @@ BASE_DIR  = os.path.dirname(os.path.abspath(__file__))
 DB_PATH   = os.path.join(BASE_DIR, "roble.db")
 
 # Pon los Excel en la misma carpeta app\
-EXCEL_RUTAS    = os.path.join(BASE_DIR, "Rutas___Kilometros_Auditores.xlsx")
+EXCEL_RUTAS    = os.path.join(BASE_DIR, "Rutas__Kilometros_Auditores.xlsx")
 EXCEL_HISTORICO = os.path.join(BASE_DIR, "_ABR26_Roble_Ajuste_KM_macros.xlsm")
 
 # ─────────────────────────────────────────

@@ -14,3 +14,6 @@ __pycache__/
 *.log
 .DS_Store
 Thumbs.db
+
+# Archivos temporales de Excel (se crean al tener el archivo abierto)
+~$*
